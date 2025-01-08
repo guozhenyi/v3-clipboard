@@ -1,6 +1,3 @@
-/**
- * Copyright (c) 2017 - 2018 - Yev Vlasenko
- */
 const cssText = 'position:fixed;pointer-events:none;z-index:-9999;opacity:0;'
 const copyErrorMessage = 'Failed to copy value to clipboard. Unknown type.'
 
@@ -56,8 +53,8 @@ const $clipboard = (input) => {
 }
 
 export default {
-  install(Vue) {
-    Vue.prototype.$clipboard = $clipboard
+  install(app) {
+    app.config.globalProperties.$clipboard = $clipboard
 
     const generateId = ((id) => () => '$' + id++)(1)
     const handlers = {}
@@ -76,8 +73,8 @@ export default {
       return id
     }
 
-    Vue.directive('clipboard', {
-      bind(el, binding) {
+    app.directive('clipboard', {
+      beforeMount(el, binding) {
         const { arg, value } = binding
 
         switch (arg) {
@@ -120,7 +117,7 @@ export default {
         }
       },
 
-      unbind(el) {
+      unmounted(el) {
         const {
           clipboardSuccessHandler,
           clipboardErrorHandler,

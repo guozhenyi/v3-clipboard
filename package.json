@@ -1,8 +1,8 @@
 {
-  "name": "v-clipboard",
-  "description": "Vue.js Clipboard Plugin",
-  "version": "2.2.3",
-  "author": "euvl <yev.vlasenko@gmail.com>",
+  "name": "v3-clipboard",
+  "description": "Vue.js 3 clipboard plugin",
+  "version": "0.1.0",
+  "author": "gzy",
   "license": "MIT",
   "private": false,
   "types": "src/index.d.ts",
@@ -10,15 +10,20 @@
     "build": "webpack --progress --hide-modules"
   },
   "main": "dist/index.min.js",
+  "files": [
+    "dist",
+    "src"
+  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/euvl/v-clipboard.git"
+    "url": "https://github.com/guozhenyi/v3-clipboard"
   },
   "bugs": {
-    "url": "https://github.com/euvl/v-clipboard/issues"
+    "url": "https://github.com/guozhenyi/v3-clipboard/issues"
   },
   "keywords": [
     "vue",
+    "vue3",
     "clipboard",
     "vue clipboard",
     "copy",
