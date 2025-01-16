@@ -1,14 +1,13 @@
 [![npm](https://img.shields.io/npm/v/v3-clipboard)](https://img.shields.io/npm/v/v3-clipboard)
 
-[中文](./README_zh.md)
 
-## Vue.js 3.x Clipboard Plugin
+## Vue.js 3.x 剪切板插件
 
-Thanks to [v-clipboard](https://github.com/euvl/v-clipboard) for inspiration!
+该插件灵感来源于 [v-clipboard](https://github.com/euvl/v-clipboard)，感谢。
 
-If you want to support Vue 2.x, please use [v-clipboard](https://www.npmjs.com/package/v-clipboard) v2.x.
+如果你想要支持 Vue 2.x，请使用 [v-clipboard](https://www.npmjs.com/package/v-clipboard) v2.x 版本。
 
-### Install
+### 安装
 
 ```bash
 npm install --save v3-clipboard
@@ -23,39 +22,35 @@ app.use(Clipboard)
 app.mount('#app')
 ```
 
-### Using
+### 使用
 
-> When an element that contains `v-clipboard` directive is clicked, the value of `value` will be copied into clipboard.
+> 当一个包含`v-clipboard`指令的元素被点击时，元素的 `value` 的值会被复制到剪切板。
 
-Copying **static** value (directive should receive actual value):
-
-```vue
-<button v-clipboard="value">
-  Copy to clipboard
-</button>
-```
-
-Copying **dynamic** value (directive should recieve a function that returns value):
+复制 **静态** 值 (指令应该接受一个实际的值):
 
 ```vue
-<button v-clipboard="() => value">
-  Copy to clipboard
-</button>
+<button v-clipboard="value">复制到剪切板</button>
 ```
 
-Copying **anything** in your methods:
+复制 **动态** 值 (指令应该接受一个带返回值的函数):
+
+```vue
+<button v-clipboard="() => value">复制到剪切板</button>
+```
+
+在你的方法里复制**任何东西**：
 
 ```js
 this.$clipboard(value)
 ```
 
-### Events
+### 事件
 
 ```vue
 <button v-clipboard="foo"
-        v-clipboard:success="clipboardSuccessHandler" // Success event handler
-        v-clipboard:error="clipboardErrorHandler">    // Error event handler
-  Copy to clipboard
+        v-clipboard:success="clipboardSuccessHandler" // 执行成功的回调函数
+        v-clipboard:error="clipboardErrorHandler">    // 执行失败的回调函数
+  复制到剪切板
 </button>
 ```
 
@@ -73,7 +68,7 @@ this.$clipboard(value)
 }
 ```
 
-### Compatibility
+### 兼容性
 
 [Document: execCommand() Browser compatibility](https://developer.mozilla.org/en-US/docs/Web/API/Document/execCommand#browser_compatibility)
 
